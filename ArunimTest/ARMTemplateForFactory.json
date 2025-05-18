@@ -13,7 +13,7 @@
 		},
 		"HttpServer1_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://google.com"
+			"defaultValue": "@{linkedService().testurl}"
 		},
 		"HttpServer1_properties_typeProperties_userName": {
 			"type": "string",
@@ -42,6 +42,12 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"parameters": {
+					"testurl": {
+						"type": "string",
+						"defaultValue": "https://google.com"
+					}
+				},
 				"annotations": [],
 				"type": "HttpServer",
 				"typeProperties": {

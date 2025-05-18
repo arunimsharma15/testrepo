@@ -13,7 +13,7 @@
 		},
 		"HttpServer1_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://google.com"
+			"defaultValue": "@{linkedService().testurl}"
 		},
 		"HttpServer1_properties_typeProperties_userName": {
 			"type": "string",

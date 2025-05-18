@@ -9,7 +9,7 @@
 			"value": "https://Arunimtestvalut.vault.azure.net/"
 		},
 		"HttpServer1_properties_typeProperties_url": {
-			"value": "https://google.com"
+			"value": "@{linkedService().testurl}"
 		},
 		"HttpServer1_properties_typeProperties_userName": {
 			"value": "test"
