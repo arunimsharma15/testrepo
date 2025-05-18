@@ -13,7 +13,7 @@
 		},
 		"HttpServer1_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "@{linkedService().test}"
+			"defaultValue": "https://google.com"
 		},
 		"HttpServer1_properties_typeProperties_userName": {
 			"type": "string",
@@ -42,16 +42,6 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"parameters": {
-					"test": {
-						"type": "string",
-						"defaultValue": "https://google.com"
-					},
-					"secretpass": {
-						"type": "string",
-						"defaultValue": "appsecretvalue"
-					}
-				},
 				"annotations": [],
 				"type": "HttpServer",
 				"typeProperties": {
@@ -66,7 +56,7 @@
 							"type": "LinkedServiceReference"
 						},
 						"secretName": {
-							"value": "@linkedService().secretpass",
+							"value": "appsecretvalue",
 							"type": "Expression"
 						}
 					}
@@ -75,6 +65,13 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureKeyVault1')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/default')]",
+			"type": "Microsoft.DataFactory/factories/globalparameters",
+			"apiVersion": "2018-06-01",
+			"properties": {},
+			"dependsOn": []
 		}
 	]
 }
