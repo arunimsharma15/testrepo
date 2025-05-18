@@ -1,21 +1,10 @@
 {
 	"name": "HttpServer1",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
-		"parameters": {
-			"test": {
-				"type": "string",
-				"defaultValue": "https://google.com"
-			},
-			"secretpass": {
-				"type": "string",
-				"defaultValue": "appsecretvalue"
-			}
-		},
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "@{linkedService().test}",
+			"url": "https://google.com",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Basic",
 			"userName": "test",
@@ -26,10 +15,11 @@
 					"type": "LinkedServiceReference"
 				},
 				"secretName": {
-					"value": "@linkedService().secretpass",
+					"value": "appsecretvalue",
 					"type": "Expression"
 				}
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
