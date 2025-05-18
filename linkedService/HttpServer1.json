@@ -1,16 +1,10 @@
 {
 	"name": "HttpServer1",
 	"properties": {
-		"parameters": {
-			"testurl": {
-				"type": "string",
-				"defaultValue": "https://google.com"
-			}
-		},
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "@{linkedService().testurl}",
+			"url": "https://google.com",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Basic",
 			"userName": "test",
