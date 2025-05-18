@@ -1,0 +1,9 @@
+{
+	"name": "ArunimTest",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "120eb65f-1010-4b11-9064-dca463436661",
+		"tenantId": "84f1e4ea-8554-43e1-8709-f0b8589ea118"
+	}
+}

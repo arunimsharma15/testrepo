@@ -1,0 +1,35 @@
+{
+	"name": "HttpServer1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"test": {
+				"type": "string",
+				"defaultValue": "https://google.com"
+			},
+			"secretpass": {
+				"type": "string",
+				"defaultValue": "appsecretvalue"
+			}
+		},
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "@{linkedService().test}",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Basic",
+			"userName": "test",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": {
+					"value": "@linkedService().secretpass",
+					"type": "Expression"
+				}
+			}
+		}
+	}
+}
